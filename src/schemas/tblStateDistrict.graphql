@@ -1,0 +1,19 @@
+type District {
+  name: String
+}
+
+type tblStateDistrict {
+  _id: ID!
+  State: String
+  Districts: [District]
+  GST: String
+  StateCode: Int
+}
+
+type Query {
+  getStateById(id: ID!): tblStateDistrict
+}
+
+schema {
+  query: Query
+}
