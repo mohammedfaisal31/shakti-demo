@@ -34,9 +34,11 @@ type Languages {
 }
 
 type Query {
-  getUserById(id: ID!): tblUserProfile
+  getUserDataById(_id: ID!): tblUserProfile
+  users : [tblUserProfile]
 }
 
 schema {
   query: Query
 }
+

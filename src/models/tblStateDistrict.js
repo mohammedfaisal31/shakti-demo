@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
-const DistrictDetails = new mongoose.Schema({
+const DistrictDetailsSchema = new mongoose.Schema({
   name: String,
 });
 
 const tblStateDistrictSchema = new mongoose.Schema({
   State: String,
-  Districts: [DistrictDetails],
+  Districts: [DistrictDetailsSchema],
   GST: String,
   StateCode: Number,
-});
+},{collection:"tblStateDistrict"});
 
 const tblStateDistrict = mongoose.model('tblStateDistrict', tblStateDistrictSchema);
 

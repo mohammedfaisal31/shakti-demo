@@ -1,13 +1,19 @@
-const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./schemas');
-const resolvers = require('./resolvers');
-const db = require('./db-config');
+const { ApolloServer } = require("@apollo/server");
+const { startStandaloneServer } = require("@apollo/server/standalone");
+
+const typeDefs = require("./schemas/schemas");
+const resolvers = require("./resolvers/resolvers");
+require("./db-config");
+
+
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
 
-server.listen().then(({ url }) => {
-  console.log(`Server running at ${url}`);
-});
+const { url } =  startStandaloneServer(server, {
+  listen: { port: 4000 },
+}); 
+
+console.log(`🚀  Server ready at: ${url}`);

@@ -29,7 +29,7 @@ const tblUserProfileSchema = new mongoose.Schema({
   ProfileImage: String,
   UserId: String,
   BankId: { type: mongoose.Schema.Types.ObjectId, ref: "tblUserBank" },
-});
+},{collection:"tblUserProfile"});
 
 const tblUserProfile = mongoose.model("tblUserProfile", tblUserProfileSchema);
 

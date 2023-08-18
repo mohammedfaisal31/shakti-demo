@@ -1,0 +1,18 @@
+type NewsActivity {
+  _id: ID!
+  UserId: ID
+  Activity: [NewsActivityItem]
+  CreatedOn: String
+}
+
+type NewsActivityItem {
+  NewsId: Int
+  TimeStamp: String
+}
+
+type Query {
+  getNewsActivityById(id: ID!): NewsActivity
+  getAllNewsActivities: [NewsActivity]
+  getNumberOfNewsActivitiesByUserId(UserId : ID!) : Int
+}
+

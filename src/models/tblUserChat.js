@@ -14,7 +14,7 @@ const tblUserChatSchema = new mongoose.Schema({
     response_message: String,
     response_time: Date,
   }],
-});
+},{collection:"tblUserChat"});
 
 const tblUserChat = mongoose.model('tblUserChat', tblUserChatSchema);
 

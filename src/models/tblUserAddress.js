@@ -20,7 +20,7 @@ const tblUserAddressSchema = new mongoose.Schema({
   _id: { type: mongoose.Schema.Types.ObjectId },
   Address: [addressDetails],
   CreatedOn: Date,
-});
+},{collection:"tblUserAddress"});
 
 const tblUserAddress = mongoose.model("tblUserAddress", tblUserAddressSchema);
 

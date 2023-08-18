@@ -1,0 +1,18 @@
+type GovtSchemeActivity {
+  _id: ID!
+  UserId: ID
+  Activity: [ActivityItem]
+  CreatedOn: String
+}
+
+type ActivityItem {
+  GovtSchemeId: Int
+  TimeStamp: String
+}
+
+type Query {
+  getGovtSchemeActivityById(id: ID!): GovtSchemeActivity
+  getAllGovtSchemeActivities: [GovtSchemeActivity]
+  getNumberOfGovtSchemeActivitiesByUserId(UserId : ID!) : Int
+}
+

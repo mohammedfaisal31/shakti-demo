@@ -17,7 +17,7 @@ const tblUserBankDetails = new mongoose.Schema({
 const tblUserBankSchema = new mongoose.Schema({
   _id: { type: mongoose.Schema.Types.ObjectId },
   BankDetails: [tblUserBankDetails],
-});
+},{collection:"tblUserBank"});
 
 const tblUserBank = mongoose.model("tblUserBank", tblUserBankSchema);
 

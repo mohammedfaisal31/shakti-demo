@@ -1,0 +1,14 @@
+type LikesDislikes {
+  _id: ID!
+  UserId: ID
+  Category: String
+  CategoryId: Int
+  Likes: Boolean
+  CreatedOn: String
+}
+
+type Query {
+  getLikesDislikesById(id: ID!): LikesDislikes
+  getAllLikesDislikes: [LikesDislikes]
+}
+
